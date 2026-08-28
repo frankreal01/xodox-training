@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simple Kanban Board</h1>
+        <div class="add-task">
+            <input type="text" id="new-task-input" placeholder="Add a new task">
+            <button id="add-task-btn">Add</button>
+        </div>
+        <div class="board">
+            <!---List 1  -->
+            <div class="list" id="list1">
+                <h2>To Do</h2>
+                <div class="card" draggable="true" id="card1"> Wash Dishes</div>
+                <div class="card" draggable="true" id="card2"> Clean room</div>
+                <div class="card" draggable="true" id="card3"> Buy Groceries</div>
+            </div>
+            <!---List 2  -->
+            <div class="list" id="list2">
+                <h2>In Progress</h2>
+                <div class="card" draggable="true" id="card4"> Learn Coding</div>
+                <div class="card" draggable="true" id="card5"> Reading</div>
+                <div class="card" draggable="true" id="card6"> Exercise</div>
+            </div>
+            <!---List 3  -->
+            <div class="list" id="list3">
+                <h2>Done</h2>
+                <div class="card" draggable="true" id="card7"> Built Website</div>
+                <div class="card" draggable="true" id="card8"> Finish Report</div>
+                <div class="card" draggable="true" id="card9"> Send Emails</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

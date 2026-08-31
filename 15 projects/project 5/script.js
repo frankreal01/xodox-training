@@ -2,69 +2,103 @@ const addBookMarkBtn = document.getElementById('add-bookmark');
 const bookmarksList = document.getElementById('bookmarks-list');
 const bookmarkNameInput = document.getElementById('bookmark-name');
 const bookmarkUrlInput = document.getElementById('bookmark-url');
+const storageKey = 'bookmarks';
 
-document.addEventListener('DOMContentLoaded', loadBookmark);
+function getBookmarksFromStorage() {
+    try {
+        const bookmarks = JSON.parse(localStorage.getItem(storageKey));
 
-addBookMarkBtn.addEventListener('click', function () {
-    const name = bookmarkNameInput.value.trim();
-    const url = bookmarkUrlInput.value.trim();
-
-    if (!name || !url) {
-        alert('Please enter both a name and a URL for your bookmark.');
-        return;
-    } else {
-        if (!url.includes('https://') && !url.includes('http://')) {
-            alert('Please enter a valid URL that includes https:// or http://.');
-            return;
+        if (!Array.isArray(bookmarks)) {
+            return [];
         }
-        addBookMark(name, url);
-        saveBookmark(name, url);
-        bookmarkNameInput.value = '';
-        bookmarkUrlInput.value = '';
+
+        return bookmarks
+            .filter((bookmark) => typeof bookmark.name === 'string' && typeof bookmark.url === 'string')
+            .map((bookmark) => ({
+                ...bookmark,
+                id: bookmark.id || `${bookmark.name}-${bookmark.url}`
+            }));
+    } catch {
+        return [];
+    }
+}
+
+function saveBookmarks(bookmarks) {
+    localStorage.setItem(storageKey, JSON.stringify(bookmarks));
+}
+
+function addBookmarkToPage(bookmark) {
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    const deleteBtn = document.createElement('button');
+
+    link.href = bookmark.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = bookmark.name;
+
+    deleteBtn.type = 'button';
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.addEventListener('click', () => {
+        const bookmarks = getBookmarksFromStorage().filter((savedBookmark) =>
+            savedBookmark.id !== bookmark.id
+        );
+
+        saveBookmarks(bookmarks);
+        item.remove();
+    });
+
+    item.append(link, deleteBtn);
+    bookmarksList.appendChild(item);
+}
+
+function loadBookmarks() {
+    bookmarksList.innerHTML = '';
+    getBookmarksFromStorage().forEach(addBookmarkToPage);
+}
+
+function normaliseUrl(url) {
+    return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+}
+
+function addBookmark() {
+    const name = bookmarkNameInput.value.trim();
+    const url = normaliseUrl(bookmarkUrlInput.value.trim());
+
+    if (!name || !bookmarkUrlInput.value.trim()) {
+        alert('Please enter both a bookmark name and URL.');
+        return;
     }
 
-    function addBookMark(name, url) {
-        const li = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = url;
-        link.target = '_blank';
-        link.textContent = name;
-        li.appendChild(link);
-
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Delete';
-        deleteBtn.addEventListener('click', function () {
-            bookmarksList.removeChild(li);
-            deleteBookmarkFromStorage(name, url);
-        });
-
-        li.appendChild(link);
-        li.appendChild(deleteBtn);
-        bookmarksList.appendChild(li);
-
+    try {
+        new URL(url);
+    } catch {
+        alert('Please enter a valid website address.');
+        return;
     }
 
-    function getBookmarksFromStorage() {
-        const bookmarks = localStorage.getItem('bookmarks');
-        return bookmarks ? JSON.parse(bookmarks) : [];
-    }
+    const bookmark = {
+        id: Date.now().toString(),
+        name,
+        url
+    };
 
-    function saveBookmark(name, url) {
-        const bookmarks = getBookmarksFromStorage();
-        bookmarks.push({ name, url });
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-    }
+    const bookmarks = getBookmarksFromStorage();
+    bookmarks.push(bookmark);
+    saveBookmarks(bookmarks);
+    addBookmarkToPage(bookmark);
 
-    function loadBookmark() {
-        const bookmarks = getBookmarksFromStorage();
-        bookmarks.forEach(bookmark => {
-            addBookMark(bookmark.name, bookmark.url);
-        });
-    }
+    bookmarkNameInput.value = '';
+    bookmarkUrlInput.value = '';
+    bookmarkNameInput.focus();
+}
 
-    function deleteBookmarkFromStorage(name, url) {
-        let bookmarks = getBookmarksFromStorage();
-        bookmarks = bookmarks.filter(bookmark => bookmark.name !== name || bookmark.url !== url);
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+addBookMarkBtn.addEventListener('click', addBookmark);
+
+bookmarkUrlInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        addBookmark();
     }
 });
+
+loadBookmarks();

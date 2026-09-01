@@ -12,6 +12,7 @@ A collection of small front-end projects built with plain HTML, CSS, and JavaScr
 | 4. Expense Tracker | Records income and expenses. | Live balance calculations, transaction deletion, input validation, and browser storage. |
 | 5. Bookmark Saver | Saves useful website links. | URL validation, opening links in a new tab, deletion, and browser storage. |
 | 6. Form Validator | A responsive account-registration form. | Username, email, and password validation plus accessible show/hide password eye controls. |
+| 7. Password Generator | Creates passwords based on selected character types. | Adjustable length, uppercase/lowercase/number/symbol options, strength indicator, and clipboard copying. |
 
 ## Run a project locally
 

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Members Showcase</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Meet Our Team</h1>
+            <p>We're a passionate group of professionals dedicated to delivering exceptional results</p>
+        </header>
+
+        <!-- Search & Filter Controls -->
+        <div class="team-controls">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="member-search" placeholder="Search by name, role, or keywords..." aria-label="Search team members" />
+                <button id="clear-search" class="clear-btn hidden" aria-label="Clear search">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="filter-tabs" role="tablist" aria-label="Filter team members by department">
+                <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="filter-tab" data-filter="leadership" role="tab" aria-selected="false">Leadership</button>
+                <button class="filter-tab" data-filter="design" role="tab" aria-selected="false">Design</button>
+                <button class="filter-tab" data-filter="engineering" role="tab" aria-selected="false">Engineering</button>
+                <button class="filter-tab" data-filter="marketing" role="tab" aria-selected="false">Marketing</button>
+                <button class="filter-tab" data-filter="product" role="tab" aria-selected="false">Product</button>
+                <button class="filter-tab" data-filter="support" role="tab" aria-selected="false">Support</button>
+            </div>
+        </div>
+
+        <div id="no-results" class="no-results hidden">
+            <i class="fas fa-user-slash"></i>
+            <h3>No team members found</h3>
+            <p>Try searching with another keyword or reset your department filter.</p>
+            <button id="reset-filters-btn" class="cta-button">Reset Filters</button>
+        </div>
+
+        <div class="team-grid" id="team-grid">
+            <!-- TEAM MEMBER 1 -->
+            <div class="team-card" data-id="alex" data-department="leadership" data-name="Alex Morgan" data-role="Founder & CEO" data-email="alex.morgan@company.com">
+                <div class="card-top">
+                    <div class="profile-bg"></div>
+                    <div class="profile-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Alex Morgan" />
+                    </div>
+                    <h3>Alex Morgan</h3>
+                    <p class="role">Founder & CEO</p>
+                </div>
+                <div class="card-bottom">
+                    <p class="bio">
+                        Visionary leader with 15+ years of experience in tech innovation and business
+                        strategy.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" data-network="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter" data-network="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="GitHub" data-network="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM MEMBER 2 -->
+            <div class="team-card" data-id="sarah" data-department="design" data-name="Sarah Johnson" data-role="Lead Designer" data-email="sarah.johnson@company.com">
+                <div class="card-top">
+                    <div class="profile-bg"></div>
+                    <div class="profile-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" />
+                    </div>
+                    <h3>Sarah Johnson</h3>
+                    <p class="role">Lead Designer</p>
+                </div>
+                <div class="card-bottom">
+                    <p class="bio">
+                        Award-winning designer specializing in UI/UX with a focus on creating intuitive user
+                        experiences.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" data-network="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="GitHub" data-network="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" aria-label="Facebook" data-network="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM MEMBER 3 -->
+            <div class="team-card" data-id="david" data-department="engineering" data-name="David Chen" data-role="Lead Developer" data-email="david.chen@company.com">
+                <div class="card-top">
+                    <div class="profile-bg"></div>
+                    <div class="profile-img">
+                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="David Chen" />
+                    </div>
+                    <h3>David Chen</h3>
+                    <p class="role">Lead Developer</p>
+                </div>
+                <div class="card-bottom">
+                    <p class="bio">
+                        Full-stack developer with expertise in scalable architecture and emerging
+                        technologies.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" data-network="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="GitHub" data-network="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" aria-label="Stack Overflow" data-network="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM MEMBER 4 -->
+            <div class="team-card" data-id="emily" data-department="marketing" data-name="Emily Wilson" data-role="Marketing Specialist" data-email="emily.wilson@company.com">
+                <div class="card-top">
+                    <div class="profile-bg"></div>
+                    <div class="profile-img">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Wilson" />
+                    </div>
+                    <h3>Emily Wilson</h3>
+                    <p class="role">Marketing Specialist</p>
+                </div>
+                <div class="card-bottom">
+                    <p class="bio">
+                        Digital marketing expert with a knack for creating compelling content and growth
+                        strategies.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" data-network="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter" data-network="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Instagram" data-network="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM MEMBER 5 -->
+            <div class="team-card" data-id="michael" data-department="product" data-name="Michael Torres" data-role="Product Manager" data-email="michael.torres@company.com">
+                <div class="card-top">
+                    <div class="profile-bg"></div>
+                    <div class="profile-img">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Michael Torres" />
+                    </div>
+                    <h3>Michael Torres</h3>
+                    <p class="role">Product Manager</p>
+                </div>
+                <div class="card-bottom">
+                    <p class="bio">
+                        Strategic thinker focused on bringing innovative products to market that solve real
+                        problems.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" data-network="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter" data-network="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Medium" data-network="Medium"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEAM MEMBER 6 -->
+            <div class="team-card" data-id="jennifer" data-department="support" data-name="Jennifer Lee" data-role="Customer Success" data-email="jennifer.lee@company.com">
+                <div class="card-top">
+                    <div class="profile-bg"></div>
+                    <div class="profile-img">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Jennifer Lee" />
+                    </div>
+                    <h3>Jennifer Lee</h3>
+                    <p class="role">Customer Success</p>
+                </div>
+                <div class="card-bottom">
+                    <p class="bio">
+                        Dedicated to ensuring our clients achieve their goals through excellent support and
+                        guidance.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="LinkedIn" data-network="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter" data-network="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="Email" data-network="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-cta">
+            <h2>Want to join our team?</h2>
+            <p>We're always looking for talented individuals to join our growing team.</p>
+            <a href="#open-positions" id="open-positions-btn" class="cta-button"> View Open Positions </a>
+        </div>
+    </div>
+
+    <!-- Member Details Modal -->
+    <div class="modal-overlay" id="member-modal" role="dialog" aria-modal="true" aria-labelledby="modal-member-name" tabindex="-1">
+        <div class="modal-card">
+            <button class="modal-close" id="member-modal-close" aria-label="Close profile">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-profile-header">
+                <div class="modal-avatar">
+                    <img id="modal-member-img" src="" alt="Team Member" />
+                </div>
+                <h3 id="modal-member-name">Member Name</h3>
+                <p class="role" id="modal-member-role">Member Role</p>
+                <span class="dept-badge" id="modal-member-dept">Department</span>
+            </div>
+            <div class="modal-profile-body">
+                <h4>About</h4>
+                <p id="modal-member-bio" class="bio"></p>
+                <h4>Contact & Connect</h4>
+                <div class="modal-contact-row">
+                    <a href="#" id="modal-member-email" class="email-btn"><i class="fas fa-envelope"></i> Send Email</a>
+                    <button id="copy-email-btn" class="copy-btn"><i class="fas fa-copy"></i> Copy Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Open Positions Modal -->
+    <div class="modal-overlay" id="positions-modal" role="dialog" aria-modal="true" aria-labelledby="positions-modal-title" tabindex="-1">
+        <div class="modal-card modal-positions">
+            <button class="modal-close" id="positions-modal-close" aria-label="Close open positions">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="positions-header">
+                <h2 id="positions-modal-title"><i class="fas fa-briefcase"></i> Current Openings</h2>
+                <p>Explore opportunities and build the future with us.</p>
+            </div>
+            <div class="jobs-list" id="jobs-list">
+                <!-- Injected by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

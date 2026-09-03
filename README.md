@@ -13,6 +13,11 @@ A collection of small front-end projects built with plain HTML, CSS, and JavaScr
 | 5. Bookmark Saver | Saves useful website links. | URL validation, opening links in a new tab, deletion, and browser storage. |
 | 6. Form Validator | A responsive account-registration form. | Username, email, and password validation plus accessible show/hide password eye controls. |
 | 7. Password Generator | Creates passwords based on selected character types. | Adjustable length, uppercase/lowercase/number/symbol options, strength indicator, and clipboard copying. |
+| 8. Todo App | Dynamic task management with local persistence. | Task creation, completion toggles, deletion, filtering (All/Active/Completed), and localStorage sync. |
+| 9. Contact Form | Accessible contact form with real-time feedback. | Input validation, accessible ARIA live status region, and responsive styling with Font Awesome icons. |
+| 10. Pricing Cards | Interactive subscription pricing table. | Monthly/annual billing toggle with 20% discount calculation, animated pricing, accessible checkout modal, and keyboard support. |
+| 11. Team Members Showcase | Searchable and filterable team gallery. | Live search, department filtering tabs, detailed member profile modal, open careers modal, and toast feedback. |
+| 12. Recipe Finder | Global recipe discovery powered by TheMealDB API. | Real-time search, asynchronous fetch, ingredient breakdown, step-by-step directions, and YouTube video tutorials. |
 
 ## Run a project locally
 

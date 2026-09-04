@@ -18,6 +18,7 @@ A collection of small front-end projects built with plain HTML, CSS, and JavaScr
 | 10. Pricing Cards | Interactive subscription pricing table. | Monthly/annual billing toggle with 20% discount calculation, animated pricing, accessible checkout modal, and keyboard support. |
 | 11. Team Members Showcase | Searchable and filterable team gallery. | Live search, department filtering tabs, detailed member profile modal, open careers modal, and toast feedback. |
 | 12. Recipe Finder | Global recipe discovery powered by TheMealDB API. | Real-time search, asynchronous fetch, ingredient breakdown, step-by-step directions, and YouTube video tutorials. |
+| 13. Currency Converter | Real-time currency exchange calculator via ExchangeRate API. | Dynamic currency dropdowns, instant swap button, live conversion on input, rate info badge, and offline/error handling. |
 
 ## Run a project locally
 

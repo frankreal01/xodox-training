@@ -160,5 +160,5 @@ function formatDate(dateString) {
     });
 }
 
-searchInput.value = "burakorkmez";
+searchInput.value = "frankreal01";
 searchUser();

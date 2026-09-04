@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom 404 Page - Page Not Found</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="error-wrapper">
+        <div class="image-wrapper" id="image-wrapper" title="Click to cast your fishing rod!">
+            <img src="404.png" alt="404 illustration - Fishing in the wrong hole" id="illustration" />
+            <div class="fishing-float" id="fishing-float">🎣</div>
+        </div>
+
+        <div class="error-badge">
+            <i class="fas fa-triangle-exclamation"></i>
+            <span>Error 404: Route Not Found</span>
+        </div>
+
+        <h1>Oops! Page not found 👀</h1>
+        <p class="subtitle">Looks like you’re fishing in the wrong hole. We couldn't locate <code id="broken-url">/unknown-path</code>.</p>
+
+        <!-- Countdown Banner -->
+        <div class="countdown-bar" id="countdown-bar">
+            <span><i class="fas fa-clock"></i> Redirecting home in <strong id="countdown-timer">10</strong>s</span>
+            <button type="button" id="pause-countdown-btn" title="Pause redirection">
+                <i class="fas fa-pause"></i> Pause
+            </button>
+        </div>
+
+        <!-- Primary Action Buttons -->
+        <div class="actions-group">
+            <a href="../../index.html" class="btn btn-primary" id="home-link">
+                <i class="fas fa-house"></i> Back to Home
+            </a>
+            <button type="button" class="btn btn-secondary" id="random-project-btn">
+                <i class="fas fa-dice"></i> Random Project
+            </button>
+            <button type="button" class="btn btn-outline" id="fish-btn">
+                <i class="fas fa-fish"></i> Cast Rod 🎣
+            </button>
+        </div>
+
+        <!-- Fishing Catch Result Alert -->
+        <div id="catch-alert" class="catch-alert hidden" role="status"></div>
+
+        <!-- Quick Project Finder Search -->
+        <div class="search-section">
+            <div class="search-box">
+                <i class="fas fa-magnifying-glass search-icon"></i>
+                <input type="text" id="project-search" placeholder="Search any of the 15 projects..." autocomplete="off" />
+                <button type="button" id="clear-search-btn" class="clear-btn hidden"><i class="fas fa-xmark"></i></button>
+            </div>
+            <div id="search-results" class="search-results hidden"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

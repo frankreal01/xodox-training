@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter UI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="signup-container">
+        <!-- Subscriber Counter Badge -->
+        <div class="subscriber-badge" id="subscriber-badge">
+            <i class="fas fa-bolt"></i>
+            <span>Join <strong id="subscriber-count">4,820</strong> tech enthusiasts</span>
+        </div>
+
+        <!-- Initial Subscription Card View -->
+        <div id="form-content">
+            <div class="icon-container">
+                <i class="far fa-envelope-open"></i>
+            </div>
+            <h2>Join Our Newsletter</h2>
+            <p>Get the latest web dev insights, design trends, and free weekly coding tips straight to your inbox.</p>
+
+            <form id="newsletter-form" novalidate>
+                <div class="input-group">
+                    <i class="far fa-envelope"></i>
+                    <input type="email" id="email" required placeholder="Enter your email address" autocomplete="email" />
+                </div>
+
+                <div id="status-message" class="status-message" role="alert" aria-live="polite"></div>
+
+                <button type="submit" id="subscribe-btn">
+                    <span id="btn-text">Subscribe</span>
+                    <i class="fas fa-arrow-right" id="btn-icon"></i>
+                </button>
+            </form>
+
+            <div class="benefits">
+                <p class="benefit-item"><i class="fas fa-check"></i> Weekly high-impact coding tips</p>
+                <p class="benefit-item"><i class="fas fa-check"></i> Free cheat sheets & project templates</p>
+                <p class="benefit-item"><i class="fas fa-check"></i> No spam, 1-click unsubscribe anytime</p>
+            </div>
+        </div>
+
+        <!-- Success Confirmation View -->
+        <div id="success-view" class="success-view hidden">
+            <div class="success-icon">
+                <i class="fas fa-circle-check"></i>
+            </div>
+            <h2>You're Subscribed! 🎉</h2>
+            <p>A verification email is on its way to <strong id="subscribed-email-display"></strong>. Check your inbox to confirm your subscription.</p>
+            <div class="success-benefits">
+                <div class="benefit-item"><i class="fas fa-check"></i> First issue arriving this Thursday</div>
+            </div>
+            <div class="success-buttons">
+                <button type="button" id="another-btn" class="action-btn">
+                    <i class="fas fa-plus"></i> Subscribe Another Email
+                </button>
+                <button type="button" id="unsubscribe-btn" class="outline-btn">
+                    <i class="fas fa-user-minus"></i> Unsubscribe
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

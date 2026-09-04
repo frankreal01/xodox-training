@@ -19,6 +19,9 @@ A collection of small front-end projects built with plain HTML, CSS, and JavaScr
 | 11. Team Members Showcase | Searchable and filterable team gallery. | Live search, department filtering tabs, detailed member profile modal, open careers modal, and toast feedback. |
 | 12. Recipe Finder | Global recipe discovery powered by TheMealDB API. | Real-time search, asynchronous fetch, ingredient breakdown, step-by-step directions, and YouTube video tutorials. |
 | 13. Currency Converter | Real-time currency exchange calculator via ExchangeRate API. | Dynamic currency dropdowns, instant swap button, live conversion on input, rate info badge, and offline/error handling. |
+| 14. GitHub User Finder | GitHub user search via official REST API. | Detailed developer stats, repo cards with stars/forks/languages, avatar display, and user-friendly error alerts. |
+| 15. Newsletter UI | Responsive newsletter subscription interface. | Client-side email validation, duplicate prevention with localStorage, simulated async API service, and success confirmation card. |
+| 16. Bonus: Custom 404 Page | Playful and interactive error 404 page. | Auto-redirect countdown with pause/resume, random project jump, live project directory search, and fishing easter egg. |
 
 ## Run a project locally
 

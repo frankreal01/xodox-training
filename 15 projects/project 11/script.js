@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             desc: "Drive digital acquisition campaigns, brand awareness, and performance metrics."
         },
         {
-            title: "Customer Success Specialist",
+            title: "Customer Service Specialist",
             dept: "Support",
             type: "Full-Time",
             location: "On-Site",
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.textContent = "Applied ✓";
                 btn.style.background = "#10b981";
                 btn.disabled = true;
-                showToast(`🎉 Application submitted for ${title}! We will be in touch.`);
+                showToast(`Application submitted for ${title}! We will be in touch.`);
             });
         });
     }
@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
         copyEmailBtn.addEventListener("click", () => {
             if (navigator.clipboard && currentEmail) {
                 navigator.clipboard.writeText(currentEmail).then(() => {
-                    showToast(`📋 Copied ${currentEmail} to clipboard!`);
+                    showToast(`Copied ${currentEmail} to clipboard!`);
                 }).catch(() => {
                     showToast(`Email: ${currentEmail}`);
                 });

@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modalConfirm.addEventListener("click", () => {
             const data = pricingData[selectedPlanKey];
             closeModal();
-            showToast(`🎉 Success! Proceeding with ${data.name} (${isAnnual ? "Annual" : "Monthly"}).`);
+            showToast(`Success! Proceeding with ${data.name} (${isAnnual ? "Annual" : "Monthly"}).`);
         });
     }
 
